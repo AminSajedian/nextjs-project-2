@@ -5,7 +5,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>Blog Listing App</title>
+        <title>Blog App</title>
       </Head>
       <main>
         <h1>Home Page</h1>

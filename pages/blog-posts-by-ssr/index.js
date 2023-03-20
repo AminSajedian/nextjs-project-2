@@ -4,10 +4,10 @@ import Link from "next/link";
 // This gets called on every request
 export async function getServerSideProps() {
   const res = await fetch(
-    `https://jsonplaceholder.typicode.com/users`
+    `https://msajedian-bug-free-waddle-w445qvx975wcjxw-8080.preview.app.github.dev/api/blog-posts`
   );
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
   // Pass data to the page via props
   return { props: { blogPosts: data } };
 }
@@ -36,7 +36,7 @@ export default function BlogPostsBySSR(props) {
                 borderRadius: "10px",
               }}
             >
-              <div>Name: {blogPost.name}</div>
+              <div>Title: {blogPost.title}</div>
             </div>
           </Link>
         ))}

@@ -1,6 +1,6 @@
 export async function getStaticPaths() {
   const res = await fetch(
-    "https://jsonplaceholder.typicode.com/users"
+    "https://msajedian-bug-free-waddle-w445qvx975wcjxw-8080.preview.app.github.dev/api/blog-posts"
   );
   const data = await res.json();
 
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${params.id}`
+    `https://msajedian-bug-free-waddle-w445qvx975wcjxw-8080.preview.app.github.dev/api/blog-posts/${params.id}`
   );
   const data = await res.json();
 
@@ -39,10 +39,8 @@ export default function DetailsBySSG({ blogPost }) {
       <h1>Blog Post Details by SSG (Static-site generation)</h1>
       <br />
       <div>
-        <div>Blog Title: {blogPost.blogTitle}</div>
-        <div>Blog Type: {blogPost.blog_type.blogType}</div>
-        <div>City: {blogPost.blog_location.city}</div>
-        <div>blog Description: {blogPost.blogDescription}</div>
+        <div>Blog Title: {blogPost.title}</div>
+        <div>Blog Body: {blogPost.body}</div>
       </div>
     </>
   );

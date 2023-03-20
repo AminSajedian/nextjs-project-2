@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export async function getStaticProps() {
   const res = await fetch(
-    "https://jsonplaceholder.typicode.com/users"
+    "https://msajedian-bug-free-waddle-w445qvx975wcjxw-8080.preview.app.github.dev/api/blog-posts"
   );
   const data = await res.json();
 
@@ -46,10 +46,8 @@ export default function BlogPostsBySSGAndISR({ blogPosts }) {
                 borderRadius: "10px",
               }}
             >
-              <div>Blog Title: {blogPost.blogTitle}</div>
-              {/* <div>Blog Description: {blogPost.blogDescription}</div> */}
-              <div>Blog Type: {blogPost.blog_type.blogType}</div>
-              <div>City: {blogPost.blog_location.city}</div>
+              <div>Blog Title: {blogPost.title}</div>
+              <div>Blog Body: {blogPost.body}</div>
             </div>
           </Link>
         ))}

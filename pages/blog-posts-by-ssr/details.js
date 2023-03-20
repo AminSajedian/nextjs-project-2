@@ -2,7 +2,7 @@ export async function getServerSideProps(props) {
   // console.log("props.query.blogPostId: ", props.query.blogPostId);
   const blogPostId = props.query.blogPostId;
   const res = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${blogPostId}`
+    `https://msajedian-bug-free-waddle-w445qvx975wcjxw-8080.preview.app.github.dev/api/blog-posts/${blogPostId}`
   );
   const data = await res.json();
 
@@ -21,10 +21,8 @@ export default function DetailsBySSR({ blogPost }) {
       <h1>Blog Post Details by SSR (Server-side rendering)</h1>
       <br />
       <div>
-        <div>Name: {blogPost.name}</div>
-        <div>Username: {blogPost.username}</div>
-        <div>Email: {blogPost.email}</div>
-        <div>City: {blogPost.address.city}</div>
+        <div>Blog Title: {blogPost.title}</div>
+        <div>Blog Body: {blogPost.body}</div>
       </div>
     </>
   );
