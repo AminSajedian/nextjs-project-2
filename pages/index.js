@@ -2,6 +2,13 @@ import Head from "next/head";
 // import Link from "next/link";
 
 export default function Home(props) {
+  // process.env.BE_API_URL will not be exposed to the browser (not consoleLogable)
+  // process.env.BE_API_URL will be exposed to the server
+  // console.log("process.env.BE_API_URL: ", process.env.BE_API_URL);
+  
+  // process.env.NEXT_PUBLIC_BE_API_URL will be exposed to the browser (consoleLogable) because of NEXT_PUBLIC
+  // process.env.NEXT_PUBLIC_BE_API_URL will be exposed to the server
+  // console.log("process.env.NEXT_PUBLIC_BE_API_URL: ", process.env.NEXT_PUBLIC_BE_API_URL);
   return (
     <>
       <Head>

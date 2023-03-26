@@ -4,7 +4,7 @@ import Link from "next/link";
 // This gets called on every request
 export async function getServerSideProps() {
   const res = await fetch(
-    `https://msajedian-bug-free-waddle-w445qvx975wcjxw-8080.preview.app.github.dev/api/blog-posts`
+    `${process.env.BE_API_URL}/api/blog-posts`
   );
   const data = await res.json();
   // console.log(data);

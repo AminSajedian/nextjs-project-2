@@ -1,6 +1,6 @@
 export async function getStaticPaths() {
   const res = await fetch(
-    "https://msajedian-bug-free-waddle-w445qvx975wcjxw-8080.preview.app.github.dev/api/blog-posts"
+    `${process.env.BE_API_URL}/api/blog-posts`
   );
   const data = await res.json();
 
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await fetch(
-    `https://msajedian-bug-free-waddle-w445qvx975wcjxw-8080.preview.app.github.dev/api/blog-posts/${params.id}`
+    `${process.env.BE_API_URL}/api/blog-posts/${params.id}`
   );
   const data = await res.json();
 

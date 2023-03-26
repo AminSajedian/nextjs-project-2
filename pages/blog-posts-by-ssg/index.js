@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export async function getStaticProps() {
   const res = await fetch(
-    "https://msajedian-bug-free-waddle-w445qvx975wcjxw-8080.preview.app.github.dev/api/blog-posts"
+    `${process.env.BE_API_URL}/api/blog-posts`
   );
   const data = await res.json();
 
