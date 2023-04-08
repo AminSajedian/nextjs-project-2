@@ -4,7 +4,7 @@ export default function Footer() {
       <hr />
           <p>
         Powered by{" "}
-        <a href="https://amin.co.uk" className="font-medium text-orange-600">
+        <a href="https://github.com/MSajedian" className="font-medium text-orange-600">
           Amin
         </a>{" "}
       </p>

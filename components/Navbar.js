@@ -22,6 +22,10 @@ export default function Navbar() {
         Blog Posts by SSG (Static-site generation) and ISR (Incremental Static
         Regeneration)
       </Link>
+      <span> | </span>
+      <Link href="/blog-posts-by-csr">
+        Blog Posts by CSR (Client-side rendering)
+      </Link>
       <br />
       <br />
       <button type="button" onClick={() => router.back()}>

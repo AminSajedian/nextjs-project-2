@@ -2,8 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-export default function JobPostsByCSR() {
-  const [jobPosts, setJobPosts] = useState(null);
+export default function BlogPostsByCSR() {
+  const [blogPosts, setBlogPosts] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -11,30 +11,30 @@ export default function JobPostsByCSR() {
     // console.log("process.env.BE_API_URL: ", process.env.BE_API_URL);
     setLoading(true);
     fetch(
-      `${process.env.NEXT_PUBLIC_BE_API_URL}/api/job-posts/active-job-posts`
+      `${process.env.NEXT_PUBLIC_BE_API_URL}/api/blog-posts`
     )
       .then((res) => res.json())
       .then((data) => {
-        setJobPosts(data);
-        console.log("jobPosts: ", data);
+        setBlogPosts(data);
+        console.log("blogPosts: ", data);
         setLoading(false);
       });
     // eslint-disable-next-line
   }, []);
 
   if (isLoading) return <p>Loading...</p>;
-  if (!jobPosts) return <p>No jobPosts</p>;
+  if (!blogPosts) return <p>No blog Posts</p>;
 
   return (
     <>
-      <Head>{/* <title>Job Listing App</title> */}</Head>
+      <Head>{/* <title>Blog Listing App</title> */}</Head>
       <main>
-        <h1>Job Posts by CSR (Client-side rendering)</h1>
+        <h1>Blog Posts by CSR (Client-side rendering)</h1>
         <br />
-        {jobPosts.map((jobPost, index) => (
+        {blogPosts.map((blogPost, index) => (
           <Link
-            href={`/development/job-posts-by-csr/details?jobPostId=${jobPost.id}`}
-            key={`jobPost-${index}`}
+            href={`/blog-posts-by-csr/details?blogPostId=${blogPost.id}`}
+            key={`blogPost-${index}`}
           >
             <div
               style={{
@@ -46,9 +46,7 @@ export default function JobPostsByCSR() {
                 borderRadius: "10px",
               }}
             >
-              <div>Job Title: {jobPost.jobTitle}</div>
-              <div>Job Type: {jobPost.job_type.jobType}</div>
-              <div>City: {jobPost.job_location.city}</div>
+              <div>Title: {blogPost.title}</div>
             </div>
           </Link>
         ))}
