@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { Montserrat } from "next/font/google";
 import Layout from "../components/Layout";
+import "flowbite";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

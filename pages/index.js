@@ -1,3 +1,4 @@
+import MyCards from "@/components/MyCards";
 import Head from "next/head";
 // import Link from "next/link";
 
@@ -29,6 +30,9 @@ export default function Home() {
             Choose one of them from the navbar and see the differnce on the
             terminal of Backend App
           </p>
+        </div>
+        <div className="flex flex-row justify-center py-5">
+          <MyCards />
         </div>
       </main>
     </>
